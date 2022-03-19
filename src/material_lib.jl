@@ -59,7 +59,7 @@ const silenka_e_glass_1200tex = IsotropicMaterial(
 
 
 
-const epoxy_sample_1 = OrthotropicMaterial{Float64}(
+const epoxy_sample_1 = OrthotropicMaterial(
     tag="epoxy_sample_1",
     c_ij=Dict(
         :C11 =>3.86,   :C12 => 2.57,   :C13 => 2.57,
@@ -71,7 +71,7 @@ const epoxy_sample_1 = OrthotropicMaterial{Float64}(
 )
 
 
-const PZT_5A = OrthotropicMaterial{Float64}(
+const PZT_5A = OrthotropicMaterial(
     tag="PZA-5A", c_ij=Dict(
         :C11 =>111.0,   :C12 => 75.2,   :C13 => 75.2,
         :C22 =>121.0,   :C23 => 75.4,   :C33 => 121.0,
@@ -82,7 +82,7 @@ const PZT_5A = OrthotropicMaterial{Float64}(
 )
 
 
-const BaTiO3 = OrthotropicMaterial{Float64}(
+const BaTiO3 = OrthotropicMaterial(
     tag="Barium Titanate Oxide", c_ij=Dict(
         :C11 =>162.0e09,   :C12 => 78.0e09,   :C13 => 78.0e09,
         :C22 =>166.0e09,   :C23 => 77.0e09,   :C33 => 166.0e09,
@@ -95,7 +95,7 @@ const BaTiO3 = OrthotropicMaterial{Float64}(
 )
 
 
-const CoFe2O4 = OrthotropicMaterial{Float64}(
+const CoFe2O4 = OrthotropicMaterial(
     tag="Coblat Ferrite", c_ij=Dict(
         :C11 =>269.5e09,   :C12 => 170.0e09,   :C13 => 170.0e09,
         :C22 =>286.0e09,   :C23 => 173.0e09,   :C33 => 286.0e09,
