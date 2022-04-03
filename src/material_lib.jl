@@ -70,6 +70,16 @@ const epoxy_sample_1 = OrthotropicMaterial(
     eps_ij = Dict(:eps_11=>0.0797, :eps_22=>0.0797, :eps_33=>0.0797,),
 )
 
+const epoxy_sample_2 = OrthotropicMaterial(
+    tag="epoxy_sample_2",
+    c_ij=Dict(
+        :C11 =>8e09,   :C12 => 4.4e09,   :C13 => 4.4e09,
+        :C22 =>8e09,   :C23 => 4.4e09,   :C33 => 8e09,
+        :C44 => 1.8e09,  :C55 => 1.8e09,   :C66 => 1.8e09,
+    ),
+    e_ij = Dict(:e11=>0.0, :e21=>0.0, :e15=>0.0,),
+    eps_ij = Dict(:eps_11=>0.0372, :eps_22=>0.0372, :eps_33=>0.0372,),
+)
 
 const PZT_5A = OrthotropicMaterial(
     tag="PZA-5A", c_ij=Dict(
@@ -81,12 +91,21 @@ const PZT_5A = OrthotropicMaterial(
     eps_ij = Dict(:eps_11=>7.35, :eps_22=>8.11, :eps_33=>8.11,),
 )
 
+const PZT_7A = OrthotropicMaterial(
+    tag="PZA-7A", c_ij=Dict(
+        :C11 =>131.39e09,   :C12 => 82.712e09,   :C13 => 82.712e09,
+        :C22 =>154.837e09,   :C23 => 83.237e09,   :C33 => 154.837e09,
+        :C44 => 35.8e09,   :C55 => 25.696e09,   :C66 => 25.696e09,
+    ),
+    e_ij = Dict(:e11=>9.52183, :e21=>-2.120582, :e15=>9.349593,),
+    eps_ij = Dict(:eps_11=>2.079, :eps_22=>4.065, :eps_33=>4.065,),
+)
 
 const BaTiO3 = OrthotropicMaterial(
     tag="Barium Titanate Oxide", c_ij=Dict(
         :C11 =>162.0e09,   :C12 => 78.0e09,   :C13 => 78.0e09,
         :C22 =>166.0e09,   :C23 => 77.0e09,   :C33 => 166.0e09,
-        :C44 => 43.0e09,   :C55 => 43.0e09,   :C66 => 43.0e09,
+        :C44 => 44.5e09,   :C55 => 43.0e09,   :C66 => 43.0e09,
     ),
     e_ij = Dict(:e11=>18.6, :e21=>-4.4, :e15=>11.6,),
     eps_ij = Dict(:eps_11=>12.6e-09, :eps_22=>11.2e-09, :eps_33=>11.2e-09,),
@@ -99,10 +118,10 @@ const CoFe2O4 = OrthotropicMaterial(
     tag="Coblat Ferrite", c_ij=Dict(
         :C11 =>269.5e09,   :C12 => 170.0e09,   :C13 => 170.0e09,
         :C22 =>286.0e09,   :C23 => 173.0e09,   :C33 => 286.0e09,
-        :C44 => 45.3e09,   :C55 => 45.3e09,   :C66 => 45.3e09,
+        :C44 => 56.5e09,   :C55 => 45.3e09,   :C66 => 45.3e09,
     ),
     e_ij = Dict(:e11=>0.0, :e21=>0.0, :e15=>0.0,),
     eps_ij = Dict(:eps_11=>0.093e-09, :eps_22=>0.08e-09, :eps_33=>0.08e-09,),
-    q_ij = Dict(:q11=>699.7, :q21=>580.3, :q15=>550.0,),
+    q_ij = Dict(:q11=>700, :q21=>580, :q15=>560.0,),
     μ_ij = Dict(:μ11=>1.57e-04, :μ22=>-5.9e-04, :μ33=>-5.9e-04,),
 )
