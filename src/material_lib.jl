@@ -49,7 +49,12 @@ const glass_fibre = IsotropicMaterial(
 
 
 const sample_A_fibre = IsotropicMaterial(
-    tag="sample_A_fibre", K=0.1,
+    tag="sample_A_fibre", K=150.0,
+)
+
+
+const sample_B_fibre = IsotropicMaterial(
+    tag="sample_B_fibre", K=300.0,
 )
 
 
@@ -57,6 +62,10 @@ const silenka_e_glass_1200tex = IsotropicMaterial(
     tag="silenka_e_glass", E=74.0e09, nu=0.2, alpha=4.9e-06,
 )
 
+
+const Dglass = IsotropicMaterial(
+    tag="Dglass", E=51.7e09, nu=0.22, alpha=2.5e-06,
+)
 
 
 const epoxy_sample_1 = OrthotropicMaterial(
@@ -99,6 +108,40 @@ const PZT_7A = OrthotropicMaterial(
     ),
     e_ij = Dict(:e11=>9.52183, :e21=>-2.120582, :e15=>9.349593,),
     eps_ij = Dict(:eps_11=>2.079, :eps_22=>4.065, :eps_33=>4.065,),
+)
+
+# SOURCE: https://doi.org/10.1142/S2010135X20500071
+const PZT_4 = OrthotropicMaterial(
+    tag="PZA-4A", c_ij=Dict(
+        :C11 =>115.0e09,   :C12 => 74.3e09,   :C13 => 74.3e09,
+        :C22 =>139.0e09,   :C23 => 77.8e09,   :C33 => 139.0e09,
+        :C44 => 30.6e09,   :C55 => 25.60e09,   :C66 => 25.60e09,
+    ),
+    e_ij = Dict(:e11=>15.1, :e21=>-5.20, :e15=>12.7,),
+    eps_ij = Dict(:eps_11=>5.61975, :eps_22=>6.4605, :eps_33=>6.4605,),
+)
+
+# SOURCE: http://dx.doi.org/10.3390/met5020863
+const PZT_6B = OrthotropicMaterial(
+    tag="PZA-6B", c_ij=Dict(
+        :C11 =>163.0e09,   :C12 => 60.0e09,   :C13 => 60.0e09,
+        :C22 =>168.0e09,   :C23 => 60.0e09,   :C33 => 168.0e09,
+        :C44 => 54.0e09,   :C55 => 27.1e09,   :C66 => 27.1e09,
+    ),
+    e_ij = Dict(:e11=>7.1, :e21=>-0.9, :e15=>4.6,),
+    eps_ij = Dict(:eps_11=>3.4, :eps_22=>3.6, :eps_33=>3.6,),
+)
+
+
+# SOURCE: https://doi.org/10.1590/S1678-58782009000400005 
+const PZT_8 = OrthotropicMaterial(
+    tag="PZA-8", c_ij=Dict(
+        :C11 =>124.0e09,   :C12 => 71.6e09,   :C13 => 71.6e09,
+        :C22 =>137.0e09,   :C23 => 69.7e09,   :C33 => 137.0e09,
+        :C44 =>124.0e09,   :C55 => 31.4e09,   :C66 => 31.4e09,
+    ),
+    e_ij = Dict(:e11=>13.8, :e21=>-4.0, :e15=>10.4,),
+    eps_ij = Dict(:eps_11=>5.1507, :eps_22=>7.9473, :eps_33=>7.9473,),
 )
 
 const BaTiO3 = OrthotropicMaterial(
