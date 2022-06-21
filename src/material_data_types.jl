@@ -31,3 +31,18 @@ end
 end
 
 
+
+function makeMaterialStiffnessTensor(mat::Material)::Matrix{Float64}
+    if isa(mat, IsotropicMaterial)
+        E::Float64, nu::Float64 = mat.E, mat.nu
+        λ0::Float64 = E / ((1.0+nu)*(1.0 - (2.0*nu)))
+        return λ0 * [
+            1-nu;nu;nu;0.0;0.0;0.0;;
+            nu;1-nu;nu;0.0;0.0;0.0;;
+            nu;nu;1-nu;0.0;0.0;0.0;;
+            0.0;0.0;0.0;0.5-nu;0.0;0.0;;
+            0.0;0.0;0.0;0.0;0.5-nu;0.0;;
+            0.0;0.0;0.0;0.0;0.0;0.5-nu;;
+        ]
+    end
+end
